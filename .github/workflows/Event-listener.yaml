@@ -1,0 +1,15 @@
+name: 'Issues event listener'
+
+on: issues
+
+jobs:
+    listen-for-issues:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v2
+            
+            - name: Listens for issues
+              run: |
+                echo "Now listening for issues..."
+                echo "Issue title: ${{ github.event.issue.title}}"
